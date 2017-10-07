@@ -45,29 +45,17 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
     <profiles>
         <profile>
             <id>dev</id>
-            <build>
-                <resources>
-                    <resource>
-                        <filtering>true</filtering>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <filtering>false</filtering>
-                        <directory>src/main/java</directory>
-                        <includes>
-                            <include>**</include>
-                        </includes>
-                        <excludes>
-                            <exclude>**/*.java</exclude>
-                        </excludes>
-                    </resource>
-                </resources>
-            </build>
             <properties>
                 <!-- default Spring profiles -->
                 <spring.profiles.active>dev</spring.profiles.active>
@@ -75,24 +63,6 @@
         </profile>
         <profile>
             <id>prod</id>
-            <build>
-                <resources>
-                    <resource>
-                        <filtering>true</filtering>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                    <resource>
-                        <filtering>false</filtering>
-                        <directory>src/main/java</directory>
-                        <includes>
-                            <include>**</include>
-                        </includes>
-                        <excludes>
-                            <exclude>**/*.java</exclude>
-                        </excludes>
-                    </resource>
-                </resources>
-            </build>
             <properties>
                 <!-- default Spring profiles -->
                 <spring.profiles.active>prod</spring.profiles.active>

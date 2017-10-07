@@ -1,0 +1,29 @@
+server:
+  port: 10344
+  address: localhost
+
+spring:
+  application:
+        name: simpleLaw
+
+---
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: simplelaw
+
+---
+spring:
+  profiles: prod
+  data:
+    mongodb:
+      host: 18.220.86.241
+      port: 27017
+      database: inlaw
+      username: root
+      password: svDkWjA1pXrQ
+
+

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
-import simplelaw.config.ApplicationProperties;
 
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
@@ -17,13 +16,11 @@ import java.util.Arrays;
 public class SimpleLawApp {
     private static final Logger log = LoggerFactory.getLogger(SimpleLawApp.class);
 
-    private final ApplicationProperties applicationProperties;
     private final Environment env;
 
     @Autowired
-    public SimpleLawApp(Environment env, ApplicationProperties applicationProperties) {
+    public SimpleLawApp(Environment env) {
         this.env = env;
-        this.applicationProperties = applicationProperties;
     }
 
     @PostConstruct
@@ -42,6 +39,5 @@ public class SimpleLawApp {
                 env.getProperty("server.port"),
                 InetAddress.getLocalHost().getHostAddress(),
                 env.getProperty("server.port"));
-        System.out.println(env);
     }
 }
