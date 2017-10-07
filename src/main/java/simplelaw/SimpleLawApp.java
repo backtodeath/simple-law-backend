@@ -19,7 +19,7 @@ public class SimpleLawApp {
         log.info("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +
                         "Local: \t\thttp://localhost:{}\n\t" +
-                        "External: \thttp://{}:{}\n----------------------------------------------------------",
+                        "External: \thttp://{}:{}\n---------------------------------------------------------",
                 env.getProperty("spring.application.name"),
                 env.getProperty("server.port"),
                 InetAddress.getLocalHost().getHostAddress(),
